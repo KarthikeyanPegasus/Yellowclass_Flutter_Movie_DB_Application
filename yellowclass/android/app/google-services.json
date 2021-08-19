@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "68416932642",
+    "project_id": "oneone-cbea4",
+    "storage_bucket": "oneone-cbea4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68416932642:android:d4e9b1d0588dfd4e3a337b",
+        "android_client_info": {
+          "package_name": "com.example.yellowclass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68416932642-5lbfomk1nblcgdinnflbqn4qog92hhn4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yellowclass",
+            "certificate_hash": "16311049450039f34c354ecd4b3416f1c03088d1"
+          }
+        },
+        {
+          "client_id": "68416932642-r309ioh5rsso93p8n62ofgllnpnsft1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOYyUM-qVcSJ2J3Bc7d6nBhyBSsuaGMbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68416932642-r309ioh5rsso93p8n62ofgllnpnsft1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
