@@ -6,6 +6,7 @@ import 'package:yellowclass/Screens/Addinto/Addinto.dart';
 import 'package:yellowclass/Screens/Dashboard/Dashboard.dart';
 import 'package:yellowclass/Screens/EditHome/EditHome.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:yellowclass/me.dart';
 
 import '../../../Moviemodel.dart';
 import '../../../constants.dart';
@@ -35,9 +36,9 @@ class Body extends StatelessWidget {
             children: [
               Container(
                 child: Title(
-                    name: " History",
+                    name: " Movie",
                     colors: Color(0xFFDA0037),
-                    name2: "Yours",
+                    name2: "Add",
                     colors2: Colors.white),
               ),
               Container(
@@ -48,10 +49,17 @@ class Body extends StatelessWidget {
                     },
                     child: Text(
                       "+",
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Colors.white, fontSize: 30),
                     )),
               ),
             ],
+          ),
+          Container(
+            child: Title(
+                name: " Movie List",
+                colors: Color(0xFFDA0037),
+                name2: "Your",
+                colors2: Colors.white),
           ),
           Recentcarosel(),
           Container(
@@ -93,8 +101,10 @@ class Body extends StatelessWidget {
                     child: FlatButton(
                       child: Image.asset("assets/icons/me.png"),
                       onPressed: () {
-                        // Navigator.push(context,
-                        // MaterialPageRoute(builder: (context) => Addinto()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Karthikeyan()));
                       },
                     ))
               ],
@@ -202,11 +212,11 @@ class _RecentcaroselState extends State<Recentcarosel> {
                                       Container(
                                         child: Textfieldcontainer(
                                           child: TextField(
-                                              controller: linkdetail,
+                                              controller: genre,
                                               style: TextStyle(
                                                   color: Colors.white),
                                               decoration: InputDecoration(
-                                                  hintText: "Link",
+                                                  hintText: "Genre",
                                                   hintStyle: TextStyle(
                                                     color: Colors.grey,
                                                     fontWeight: FontWeight.bold,
@@ -216,11 +226,11 @@ class _RecentcaroselState extends State<Recentcarosel> {
                                       Container(
                                         child: Textfieldcontainer(
                                           child: TextField(
-                                              controller: genre,
+                                              controller: linkdetail,
                                               style: TextStyle(
                                                   color: Colors.white),
                                               decoration: InputDecoration(
-                                                  hintText: "Genre",
+                                                  hintText: "Poster URL",
                                                   hintStyle: TextStyle(
                                                     color: Colors.grey,
                                                     fontWeight: FontWeight.bold,
@@ -299,7 +309,15 @@ class _RecentcaroselState extends State<Recentcarosel> {
                           fit: BoxFit.cover,
                         ),
                         Text(
-                          movie.moviename,
+                          "Movie Name: ${movie.moviename}",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "Director Name: ${movie.directorname}",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Colors.white,
@@ -353,32 +371,6 @@ class Pictureautoscroll extends StatelessWidget {
             "assets/images/shadegrey.png",
             width: size.width,
           ),
-          Title(
-            name: "Recent",
-            name2: "Yours",
-            colors: Color(0xFFDA0037),
-            colors2: Colors.white,
-          ),
-          Column(
-            children: [
-              Container(
-                alignment: Alignment.bottomLeft,
-                margin: EdgeInsets.fromLTRB(33, 450, 0, 0),
-                child: Text(
-                  "Avengers Endgame",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 27,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-              Title(
-                  name: " Russel Brothers",
-                  colors: Colors.white,
-                  name2: "Director:",
-                  colors2: Color(0xFFFA7D09))
-            ],
-          ),
         ],
       ),
     );
@@ -402,7 +394,7 @@ class Title extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topLeft,
-      margin: EdgeInsets.symmetric(vertical: 60, horizontal: 30),
+      margin: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
       child: Row(
         children: [
           Container(

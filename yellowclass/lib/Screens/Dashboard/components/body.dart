@@ -10,67 +10,68 @@ class Body extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           height: size.height,
-          child: Column(
-            children: [
-              Container(
-                child: Column(
-                  children: [
-                    Container(
-                      margin:
-                          EdgeInsets.symmetric(vertical: 45, horizontal: 30),
-                      child: Text(
-                        "Hello Admin",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 21),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        margin:
+                            EdgeInsets.symmetric(vertical: 45, horizontal: 30),
+                        child: Text(
+                          "Hello Admin",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 21),
+                        ),
                       ),
-                    ),
-                    Container(
-                      child: Image.asset("assets/images/Admin.png"),
-                    ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 30),
-                      child: Text(
-                        "History Analysis",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 21),
+                      Container(
+                        child: Image.asset("assets/images/Admin.png"),
                       ),
-                    ),
-                    Container(
-                      child: Dash(
-                        width1: 0.2,
-                        width2: 0.2,
-                        width3: 0.4,
-                        p1: "20",
-                        p2: "20",
-                        p3: 60.toString(),
+                      Container(
+                        margin:
+                            EdgeInsets.symmetric(vertical: 5, horizontal: 30),
+                        child: Text(
+                          "History Analysis",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 21),
+                        ),
                       ),
-                    ),
-                    Analytics(
-                      imageasset: "assets/icons/reddot.png",
-                      name: "Fantasy",
-                      uploaded: 12.toString(),
-                    ),
-                    Analytics(
-                      imageasset: "assets/icons/yellowdot.png",
-                      name: "Comedy",
-                      uploaded: 15.toString(),
-                    ),
-                    Analytics(
-                      imageasset: "assets/icons/bluedot.png",
-                      name: "Fantasy",
-                      uploaded: 12.toString(),
-                    ),
-                  ],
+                      Container(
+                        child: Dash(
+                          width1: 0.2,
+                          width2: 0.2,
+                          width3: 0.4,
+                          p1: "20",
+                          p2: "20",
+                          p3: 60.toString(),
+                        ),
+                      ),
+                      Analytics(
+                        imageasset: "assets/icons/reddot.png",
+                        name: "Fantasy",
+                        uploaded: 12.toString(),
+                      ),
+                      Analytics(
+                        imageasset: "assets/icons/yellowdot.png",
+                        name: "Comedy",
+                        uploaded: 15.toString(),
+                      ),
+                      Analytics(
+                        imageasset: "assets/icons/bluedot.png",
+                        name: "Fantasy",
+                        uploaded: 12.toString(),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Expanded(
-                child: Container(
+                (Container(
                   alignment: Alignment.bottomCenter,
-                  margin: EdgeInsets.only(top: 0),
+                  margin: EdgeInsets.only(top: 60),
                   width: size.width,
                   height: 55,
                   color: Color(0xFF30302E),
@@ -113,9 +114,9 @@ class Body extends StatelessWidget {
                           ))
                     ],
                   ),
-                ),
-              )
-            ],
+                ))
+              ],
+            ),
           ),
         ),
       ),

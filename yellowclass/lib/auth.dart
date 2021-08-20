@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:yellowclass/Screens/Dashboard/Dashboard.dart';
+import 'package:yellowclass/Screens/EditHome/EditHome.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -31,7 +32,7 @@ Future<User> signinwithGoogle(BuildContext context) async {
   print(user);
   if (user.emailVerified) {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Dashboard()));
+        context, MaterialPageRoute(builder: (context) => Edithome()));
   }
   return user;
 }

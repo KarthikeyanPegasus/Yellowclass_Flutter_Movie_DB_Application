@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
@@ -78,26 +80,6 @@ class _UploadtoHiveState extends State<UploadtoHive> {
         ),
         Container(
           child: Title(
-              name: " Genre",
-              colors: Color(0xFFFF0000),
-              name2: "Enter",
-              colors2: Colors.white),
-        ),
-        Container(
-          child: Textfieldcontainer(
-            child: TextField(
-                controller: genre,
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                    hintText: "Genre",
-                    hintStyle: TextStyle(
-                      color: Colors.grey,
-                      fontWeight: FontWeight.bold,
-                    ))),
-          ),
-        ),
-        Container(
-          child: Title(
               name: " Director",
               colors: Color(0xFFFF0000),
               name2: "Enter",
@@ -110,6 +92,26 @@ class _UploadtoHiveState extends State<UploadtoHive> {
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                     hintText: "Director Name",
+                    hintStyle: TextStyle(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold,
+                    ))),
+          ),
+        ),
+        Container(
+          child: Title(
+              name: " Genre",
+              colors: Color(0xFFFF0000),
+              name2: "Enter",
+              colors2: Colors.white),
+        ),
+        Container(
+          child: Textfieldcontainer(
+            child: TextField(
+                controller: genre,
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                    hintText: "Genre",
                     hintStyle: TextStyle(
                       color: Colors.grey,
                       fontWeight: FontWeight.bold,
@@ -147,7 +149,7 @@ class _UploadtoHiveState extends State<UploadtoHive> {
                     link: myController.text);
 
                 moviebox.add(moviemodel);
-                print(moviebox.get(0));
+                log(moviebox.get(0).toString());
                 Navigator.pop(context);
               },
               child: Text("SAVE",
