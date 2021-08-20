@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:yellowclass/Screens/Addinto/Addinto.dart';
@@ -132,7 +134,7 @@ class _RecentcaroselState extends State<Recentcarosel> {
             valueListenable: moviebox.listenable(),
             builder: (context, Box<Moviemodel> movies, _) {
               List<int> keys = movies.keys.cast<int>().toList();
-
+              log(keys.toString());
               return ListView.separated(
                 itemBuilder: (_, index) {
                   int key = keys[index];
@@ -242,9 +244,11 @@ class _RecentcaroselState extends State<Recentcarosel> {
                                                           directorname.text,
                                                       genre: genre.text,
                                                       link: linkdetail.text);
-
-                                              moviebox.putAt(key, moviemodela);
-                                              Navigator.pop(context);
+                                              log(key.toString());
+                                              moviebox.put(key, moviemodela);
+                                              Navigator.of(context,
+                                                      rootNavigator: true)
+                                                  .pop();
                                             },
                                             child: Text("SAVE",
                                                 style: TextStyle(
@@ -264,10 +268,12 @@ class _RecentcaroselState extends State<Recentcarosel> {
                                                 vertical: 20),
                                             color: Color(0xFFDA0037),
                                             onPressed: () {
-                                              moviebox.deleteAt(key);
-                                              key--;
-                                              print(moviebox.get(0));
-                                              Navigator.pop(context);
+                                              moviebox.delete(key);
+                                              // key--;
+                                              log(moviebox.get(0).toString());
+                                              Navigator.of(context,
+                                                      rootNavigator: true)
+                                                  .pop();
                                             },
                                             child: Text("DELETE",
                                                 style: TextStyle(
